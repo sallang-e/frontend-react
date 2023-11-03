@@ -8,6 +8,8 @@ import { useState } from "react";
 
 function Rent() {
     const navigate = useNavigate();
+    const token = useSelector((state) => state.token);
+
 
     const [rentResult, setRentResult] = useState("대여 신청이 완료되었습니다. 잠시만 기다려 주십시오.");
 
@@ -27,6 +29,7 @@ function Rent() {
         // 요청 헤더
         const requestHeaders = {
             "Content-Type": "application/json",
+            "Authorization": "Bearer "+ token,
         };
     
         // 토큰 요청을 보냅니다.

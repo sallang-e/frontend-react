@@ -22,8 +22,8 @@ function Header(){
             </div>
             {token ? (
                 <div className="mypage-wrap">
-                    <div className="log-out" onClick={()=>{}}>로그아웃</div> 
-                    <div className="log-out" onClick={goMyPage}>마이페이지</div>
+                    <div className="log-out" onClick={()=>{alert("현재 시연을 위하여 로그아웃 기능을 비활성화 하였습니다.")}}>로그아웃</div> 
+                    <div className="log-out" onClick={()=>{alert("현재 시연을 위하여 마이페이지 기능을 비활성화 하였습니다.")}}>마이페이지</div>
                 </div>
             ):(<div className="mypage-wrap">
                     <div className="log-out" onClick={logOut}>로그인</div> 
