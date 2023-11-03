@@ -22,7 +22,7 @@ const Map = () => {
       ];
 
       const bikeIcon = {
-        content: '<img src="bike_icon.png" style="width: 48px; height: auto;">',
+        content: '<img src="bike_icon.png" style="width: 32px; height: auto;">',
         anchor: new window.naver.maps.Point(16, 16),
       };
 

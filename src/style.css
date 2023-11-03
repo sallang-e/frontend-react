@@ -1,0 +1,35 @@
+.header {
+    background-color: #333; /* 헤더 배경 색상 설정 */
+    color: #fff; /* 텍스트 색상 설정 */
+    display: flex;
+    justify-content: space-between; /* 로그아웃 및 마이페이지를 오른쪽으로 정렬 */
+    align-items: center; /* 로고 및 제목을 수직으로 가운데 정렬 */
+    padding: 10px 20px; /* 패딩을 조정하여 여백 추가 */
+  }
+  
+  .menu-wrap {
+    width: 72px;
+  }
+  
+  .header-wrap {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title-wrap {
+    display: flex;
+    align-items: center;
+  }
+  
+  #logo {
+    margin-right: 10px; /* 로고와 제목 사이에 간격 추가 */
+  }
+  
+  .service-title {
+    font-size: 24px; /* 제목 폰트 크기 설정 */
+  }
+  
+  .log-out {
+    cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능하게 함 */
+    margin-left: 10px; /* 로그아웃 및 마이페이지 사이에 간격 추가 */
+  }
