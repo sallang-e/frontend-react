@@ -4,35 +4,59 @@ const Map = () => {
   useEffect(() => {
     const initializeMap = () => {
       const mapOptions = {
-        center: new window.naver.maps.LatLng(37.5485, 126.974),
-        zoom: 14,
+        center: new window.naver.maps.LatLng(37.5109799, 126.9992935),
+        zoom: 13.5,
         scaleControl: false,
       };
 
       const map = new window.naver.maps.Map("map", mapOptions);
 
-      const bikeLocations = [
-        { name: "Bike Station 1", lat: 37.5485, lng: 126.975 },
-        { name: "Bike Station 2", lat: 37.546, lng: 126.9753 },
-        { name: "Bike Station 3", lat: 37.5464, lng: 126.975 },
-        { name: "Bike Station 4", lat: 37.547, lng: 126.9762 },
-        { name: "Bike Station 5", lat: 37.5462, lng: 126.9755 },
-        { name: "Bike Station 6", lat: 37.5461, lng: 126.9757 },
-        { name: "Bike Station 7", lat: 37.5109799, lng: 126.9972935 },
-        { name: "Bike Station 8", lat: 37.5111051, lng: 126.9965601 },
-        { name: "Bike Station 9", lat: 37.5109799, lng: 126.9972935 },
-        { name: "Bike Station 10", lat: 37.5092358, lng: 126.9940292 },
-        { name: "Bike Station 11", lat: 37.515214, lng: 126.9852786 },
-        { name: "Bike Station 12", lat: 37.5055991, lng: 126.9816423 },
-        { name: "Bike Station 13", lat: 37.5075175, lng: 126.9885175 },
-        { name: "Bike Station 14", lat: 37.5065417, lng: 126.9839388 },
-        { name: "Bike Station 15", lat: 37.5052439, lng: 126.9794125 },
-        { name: "Bike Station 16", lat: 37.5152439, lng: 126.9794125 },
-        { name: "Bike Station 18", lat: 37.5052439, lng: 126.6794125 },
-        { name: "Bike Station 19", lat: 37.5052439, lng: 126.8794125 },
+      const cycles = [
+        { name: "Bike Station 1", lat: 37.5109799, lng: 126.9972935 },
+        { name: "Bike Station 2", lat: 37.5111051, lng: 126.9965601 },
+        { name: "Bike Station 3", lat: 37.5109799, lng: 126.9972935 },
+        { name: "Bike Station 4", lat: 37.5092358, lng: 126.9940292 },
+        { name: "Bike Station 5", lat: 37.515214, lng: 126.9852786 },
+        { name: "Bike Station 6", lat: 37.5055991, lng: 126.9816423 },
+        { name: "Bike Station 7", lat: 37.5075175, lng: 126.9885175 },
+        { name: "Bike Station 8", lat: 37.5065417, lng: 126.9839388 },
+        { name: "Bike Station 9", lat: 37.5052439, lng: 126.9794125 },
+        { name: "Bike Station 10", lat: 37.5152439, lng: 126.9794125 },
+        { name: "Bike Station 11", lat: 37.5052439, lng: 126.6794125 },
+        { name: "Bike Station 12", lat: 37.5052439, lng: 126.8794125 },
       ];
 
-      const eventLocations = [
+      const festivals = [
+        {
+          name: "MUTE SEOUL-한강무소음DJ파티",
+          status: "종료",
+          location: "반포한강공원 동측 달빛광장",
+          lat: 37.5123463,
+          lng: 126.9985806,
+          imgUrl:
+            "https://hangang.seoul.go.kr/www/file/editorImage.do?fileNm=4e77b6bb8a774f51bf818452c4c6c6d5.jpg&day=202308",
+        },
+        {
+          name: "광진교8번가 11월 행사",
+          status: "진행중",
+          location: "서울 강동구 천호동 527-2",
+          lat: 37.5452309,
+          lng: 127.1126881,
+          imgUrl:
+            "https://hangang.seoul.go.kr/www/file/down.do?fkey=68b1d4fee5e4d3704f1c76fb23fb2bc8089c183ef724011f6c184166452bab6ffdfb9b5464957448502b6d7168f681815842879a55713a46b454e2954e871e03",
+        },
+        {
+          name: "2023 한강불빛공연 드론 라이트쇼",
+          status: "진행중",
+          location: "뚝섬한강공원 수변무대",
+          lat: 37.5287041,
+          lng: 127.0719861,
+          imgUrl:
+            "https://hangang.seoul.go.kr/www/file/down.do?fkey=c60cbebe7c5041b8be65ab16183d622d3d3632752c0a96ff23ccd3699f1204d6e09b72f8faed5c1c84d4e0317b2d45ec5a4d1a7f3e21eabf470d82342b25a5c8",
+        },
+      ];
+
+      const events = [
         {
           name: "2023 한강역사탐방",
           status: "진행중",
@@ -61,15 +85,6 @@ const Map = () => {
             "https://hangang.seoul.go.kr/www/file/down.do?fkey=38cb7b0b13fc7d300801caa15f2930091d3c84f6909b44372a64249619c5e6abbc3a46924908ebed2800898877f24c5ba6df696b518b055d6b59e16d7dbb968e",
         },
         {
-          name: "MUTE SEOUL-한강무소음DJ파티",
-          status: "종료",
-          location: "반포한강공원 동측 달빛광장",
-          lat: 37.5123463,
-          lng: 126.9985806,
-          imgUrl:
-            "https://hangang.seoul.go.kr/www/file/editorImage.do?fileNm=4e77b6bb8a774f51bf818452c4c6c6d5.jpg&day=202308",
-        },
-        {
           name: "잠수교 달빛무지개분수",
           status: "진행중",
           location: "잠수교",
@@ -77,24 +92,6 @@ const Map = () => {
           lng: 126.9964389,
           imgUrl:
             "https://hangang.seoul.go.kr/www/file/editorImage.do?fileNm=43f18a1f7a5f44268014105d0c835da0.jpg&day=202309",
-        },
-        {
-          name: "광진교8번가 11월 행사",
-          status: "진행중",
-          location: "서울 강동구 천호동 527-2",
-          lat: 37.5452309,
-          lng: 127.1126881,
-          imgUrl:
-            "https://hangang.seoul.go.kr/www/file/down.do?fkey=68b1d4fee5e4d3704f1c76fb23fb2bc8089c183ef724011f6c184166452bab6ffdfb9b5464957448502b6d7168f681815842879a55713a46b454e2954e871e03",
-        },
-        {
-          name: "2023 한강불빛공연 드론 라이트쇼",
-          status: "진행중",
-          location: "뚝섬한강공원 수변무대",
-          lat: 37.5287041,
-          lng: 127.0719861,
-          imgUrl:
-            "https://hangang.seoul.go.kr/www/file/down.do?fkey=c60cbebe7c5041b8be65ab16183d622d3d3632752c0a96ff23ccd3699f1204d6e09b72f8faed5c1c84d4e0317b2d45ec5a4d1a7f3e21eabf470d82342b25a5c8",
         },
         {
           name: "2023 문화가 흐르는 예술마당 11월 공연",
@@ -157,15 +154,12 @@ const Map = () => {
         anchor: new window.naver.maps.Point(16, 16),
       };
 
-      for (let i = 0; i < bikeLocations.length; i++) {
+      for (let i = 0; i < cycles.length; i++) {
         const bikeMarker = new window.naver.maps.Marker({
-          position: new window.naver.maps.LatLng(
-            bikeLocations[i].lat,
-            bikeLocations[i].lng
-          ),
+          position: new window.naver.maps.LatLng(cycles[i].lat, cycles[i].lng),
           map: map,
           icon: bikeIcon,
-          title: bikeLocations[i].name,
+          title: cycles[i].name,
         });
       }
 
@@ -174,15 +168,29 @@ const Map = () => {
         anchor: new window.naver.maps.Point(16, 16),
       };
 
-      for (let i = 0; i < eventLocations.length; i++) {
+      for (let i = 0; i < events.length; i++) {
         const eventMarker = new window.naver.maps.Marker({
-          position: new window.naver.maps.LatLng(
-            eventLocations[i].lat,
-            eventLocations[i].lng
-          ),
+          position: new window.naver.maps.LatLng(events[i].lat, events[i].lng),
           map: map,
           icon: eventIcon,
-          title: eventLocations[i].name,
+          title: events[i].name,
+        });
+      }
+
+      const festivalIcon = {
+        content: '<img src="festival.png" style="width: 30px; height: auto;">',
+        anchor: new window.naver.maps.Point(16, 16),
+      };
+
+      for (let i = 0; i < festivals.length; i++) {
+        const eventMarker = new window.naver.maps.Marker({
+          position: new window.naver.maps.LatLng(
+            festivals[i].lat,
+            festivals[i].lng
+          ),
+          map: map,
+          icon: festivalIcon,
+          title: festivals[i].name,
         });
       }
     };
