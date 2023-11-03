@@ -66,6 +66,26 @@ function Login() {
             marginRight: "10px",
           }}
         ></img>
+        <img
+          src="web_light_sq_ctn.svg"
+          style={{
+            padding: "10px 20px",
+            fontSize: "18px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            marginRight: "10px",
+          }}
+        ></img>
+        <img
+          src="facebook_login.png"
+          style={{
+            padding: "10px 20px",
+            fontSize: "18px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            marginRight: "10px",
+          }}
+        ></img>
         <div
           className="option"
           onClick={doLogin}
