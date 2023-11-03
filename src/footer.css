@@ -1,0 +1,22 @@
+.footer_wrapper {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_menus {
+  color: white;
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright {
+  color: gray;
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 0.7rem;
+}
