@@ -23,7 +23,7 @@ function Rent() {
     
         // 요청 데이터
         const requestData = {
-            "cycleID": cycleID,
+            "cycleID": "810",
         };
     
         // 요청 헤더
