@@ -22,7 +22,7 @@ function Header(){
             </div>
             {token ? (
                 <div className="mypage-wrap">
-                    <div className="log-out" onClick={logOut}>로그아웃</div> 
+                    <div className="log-out" onClick={()=>{}}>로그아웃</div> 
                     <div className="log-out" onClick={goMyPage}>마이페이지</div>
                 </div>
             ):(<div className="mypage-wrap">
