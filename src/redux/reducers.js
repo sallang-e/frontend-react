@@ -1,5 +1,5 @@
 // const token = localStorage.getItem('token');
-const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI3IiwiZXhwIjoxNjk5MTM1MTM5fQ.El-GjRkTOZe72OcbIPWYaMHQBaMp7lGzh_4q0D3hqNipuNAhx755-0mhVTTIRdjZO9O1P5XP4JrHdKf6z4v-Ag";
+const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNjk5MTM1ODIyfQ.iGLiV3LmUU1_r_7ZBPjj47VMfZcWht2nX7xrAO6KTjLHg-DxbE2ciFkJQPLmBXr6i58t2NhP6wux4kTd8L_TIA";
 
 const loginReducer = (state = token, action) => {
   switch (action.type) {
