@@ -234,7 +234,7 @@ const Map = () => {
   return (
     <>
       <div className="map-wrap">
-        <h1>한강 공원 자전거 현황</h1>
+        <h1 className="map-title">한강 공원 자전거 현황</h1>
         <div id="map" style={{ minHeight: "400px" }}></div>
         <div>
           <Footer />
