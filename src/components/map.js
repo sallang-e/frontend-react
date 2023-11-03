@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Footer from "./footer";
 
 const Map = () => {
   useEffect(() => {
@@ -214,6 +215,9 @@ const Map = () => {
     <div>
       <h1>한강 공원 자전거 현황</h1>
       <div id="map" style={{ minHeight: "400px" }}></div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };
