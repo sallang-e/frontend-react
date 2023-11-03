@@ -17,7 +17,7 @@ function Header(){
         <header className="header">
             <div className="menu-wrap">메뉴</div>
             <div className="title-wrap">
-                <img id="logo" src="sle_logo.png" alt="sle logo" height={32}/>
+                <img id="logo" src="sle_logo.png" alt="sle logo" height={48}/>
                 <div className="service-title">살랑이</div>
             </div>
             {token ? (

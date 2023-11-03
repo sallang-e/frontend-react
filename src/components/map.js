@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./footer";
 
 const Map = () => {
+  const [popupContents, setPopupContents] = useState([]);
+  const [hidePopup, setHidePopup] = useState(true);
+
   useEffect(() => {
     const initializeMap = () => {
       const mapOptions = {
@@ -179,6 +182,12 @@ const Map = () => {
           icon: eventIcon,
           title: events[i].name,
         });
+
+        new window.naver.maps.Event.addListener(eventMarker, 'click', function (e) {
+          console.log([events[i].name,events[i].imgUrl,events[i].location])
+          setPopupContents([events[i].name,events[i].imgUrl,events[i].location]);
+          setHidePopup(false);
+        });
       }
 
       const festivalIcon = {
@@ -196,6 +205,12 @@ const Map = () => {
           icon: festivalIcon,
           title: festivals[i].name,
         });
+
+        new window.naver.maps.Event.addListener(eventMarker, 'click', function (e) {
+          console.log([festivals[i].name,festivals[i].imgUrl,festivals[i].location])
+          setPopupContents([festivals[i].name,festivals[i].imgUrl,festivals[i].location]);
+          setHidePopup(false);
+        });
       }
     };
 
@@ -210,15 +225,30 @@ const Map = () => {
       document.head.appendChild(script);
     }
   }, []);
+  
+
+  const hidingPopup = () => {
+    setHidePopup(true);
+  }
 
   return (
-    <div>
-      <h1>한강 공원 자전거 현황</h1>
-      <div id="map" style={{ minHeight: "400px" }}></div>
+    <>
       <div>
-        <Footer />
+        <h1>한강 공원 자전거 현황</h1>
+        <div id="map" style={{ minHeight: "400px" }}></div>
+        <div>
+          <Footer />
+        </div>
       </div>
-    </div>
+      <div className="popup" hidden={hidePopup}>
+        <div className="close" onClick={hidingPopup}>닫기</div>
+        <h1>{popupContents[0]}</h1>
+        <img src={popupContents[1]}></img>
+        <div>{popupContents[2]}에서 진행하는 {popupContents[0]} 행사에 많은 참여 부탁드립니다~</div>
+      </div>
+    </>
+    
+    
   );
 };
 
