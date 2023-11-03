@@ -233,19 +233,23 @@ const Map = () => {
 
   return (
     <>
-      <div>
+      <div className="map-wrap">
         <h1>한강 공원 자전거 현황</h1>
         <div id="map" style={{ minHeight: "400px" }}></div>
         <div>
           <Footer />
         </div>
       </div>
-      <div className="popup" hidden={hidePopup}>
-        <div className="close" onClick={hidingPopup}>닫기</div>
-        <h1>{popupContents[0]}</h1>
-        <img src={popupContents[1]}></img>
-        <div>{popupContents[2]}에서 진행하는 {popupContents[0]} 행사에 많은 참여 부탁드립니다~</div>
+      {!hidePopup?(
+      <div className="popup-wrap">
+        <div className="popup">
+          <div className="close" onClick={hidingPopup}>닫기</div>
+          <h1>{popupContents[0]}</h1>
+          <img src={popupContents[1]}></img>
+          <div>{popupContents[2]}에서 진행하는 {popupContents[0]} 행사에 많은 참여 부탁드립니다~</div>
+        </div>
       </div>
+      ):(<></>)}
     </>
     
     

@@ -33,3 +33,68 @@
     cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능하게 함 */
     margin-left: 10px; /* 로그아웃 및 마이페이지 사이에 간격 추가 */
   }
+
+  .map-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 화면 높이의 100%를 사용 */
+  }
+  
+  #map {
+    flex-grow: 1; /* 남은 공간을 모두 차지 */
+  }
+
+  .header {
+    /* 헤더의 높이를 제외한 공간만 차지하도록 설정 */
+    flex: 0 0 auto;
+  }
+
+
+  .popup-wrap {
+    position: fixed; /* 화면에 고정된 위치 */
+    bottom: 0; /* 화면 하단에 위치하도록 설정 */
+    left: 0; /* 좌측에 붙도록 설정 (원하는 위치로 조절) */
+    width: 100%; /* 전체 화면 너비 */
+    background-color: #fff; /* 배경색 지정 (원하는 색상으로 변경) */
+    padding: 20px; /* 내용과 패딩 지정 (원하는 값으로 변경) */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 (선택 사항) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .popup {
+    margin: 0;
+    font-family: 'Noto Sans KR', "Times New Roman", Times, serif;
+    height: 100%;
+    min-width: 320px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .close {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .popup img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh;
+    margin: 10px 0;
+  }
+
+
+  .login-wrap{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;    
+    align-items: center;
+  }
+
+  .login-option{
+    width: 300px;
+  }

@@ -58,6 +58,7 @@ function Login() {
         <img
           src="kakao_login_medium_wide.png"
           onClick={doLogin}
+          className="login-option"
           style={{
             padding: "10px 20px",
             fontSize: "18px",
@@ -68,6 +69,7 @@ function Login() {
         ></img>
         <img
           src="web_light_sq_ctn.svg"
+          className="login-option"
           style={{
             padding: "10px 20px",
             fontSize: "18px",
@@ -78,6 +80,7 @@ function Login() {
         ></img>
         <img
           src="facebook_login.png"
+          className="login-option"
           style={{
             padding: "10px 20px",
             fontSize: "18px",
@@ -86,13 +89,6 @@ function Login() {
             marginRight: "10px",
           }}
         ></img>
-        <div
-          className="option"
-          onClick={doLogin}
-          style={{ textAlign: "center", margin: "10%" }}
-        >
-          로그인
-        </div>
       </div>
     </div>
   );
