@@ -56,7 +56,7 @@ function Login() {
                 <button onClick={doLogin}
                     style={{ padding: '10px 20px', fontSize: '18px', borderRadius: '5px', cursor: 'pointer', marginRight: '10px' }}
                 >
-                    카카오톡 로그인
+                    카카오로 로그인
                 </button>
                 <div className='option' onClick={doLogin} style={{ textAlign: 'center', margin: '10%' }}>로그인</div>
             </div>
