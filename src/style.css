@@ -102,3 +102,28 @@
   .map-title {
     padding-left: 24px;
   }
+
+  .rent-wrap{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;    
+    align-items: center;
+  }
+
+  .rent-title{
+    margin: 15vh 0px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+
+  .rent-footer{
+    margin-top: 15vh;
+    padding: 8px 20px;
+    width: 50%;
+    font-weight: bold;
+    border: #333 1px solid;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+  }

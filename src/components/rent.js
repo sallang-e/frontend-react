@@ -8,9 +8,8 @@ import { useState } from "react";
 
 function Rent() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
-    const [rentResult, setRentResult] = useState("대여 시도중입니다. 잠시만 기다려 주십시오.");
+    const [rentResult, setRentResult] = useState("대여 신청이 완료되었습니다. 잠시만 기다려 주십시오.");
 
     // localhost:3000/login?code=12312123&method=kakao
     const urlParams = new URLSearchParams(window.location.search);
