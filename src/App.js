@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Navigate, Routes } from 'react-router-d
 import './App.css';
 import Main from './main';  
 import Login from './components/login';
+import Rent from './components/rent';
 import { useSelector } from 'react-redux';
 import './style.css';
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         {token !== null && token !== undefined ? (
           <>
+            <Route path="/rent" element={<Rent />} />
             <Route path="/" element={<Main />} />
           </>
         ) : (

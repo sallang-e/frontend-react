@@ -1,4 +1,5 @@
-const token = localStorage.getItem('token');
+// const token = localStorage.getItem('token');
+const token = "temporal token";
 
 const loginReducer = (state = token, action) => {
   switch (action.type) {
