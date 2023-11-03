@@ -1,16 +1,19 @@
 import { useDispatch } from "react-redux";
+import styles from "../footer.css";
 
-function Footer() {
+const Footer = () => {
   return (
     <>
-      <div>
-        <div>주변 자전거</div>
-        <div>한강 이벤트</div>
-        <div>내 이용내역</div>
+      <div class="footer_wrapper">
+        <div class="footer_menus">주변 자전거</div>
+        <div class="footer_menus">한강 이벤트</div>
+        <div class="footer_menus">내 이용내역</div>
       </div>
-      <div>footer</div>
+      <div class="copyright">
+        copyright &copy; 2022. Free Riders. All rights reserved.
+      </div>
     </>
   );
-}
+};
 
 export default Footer;
