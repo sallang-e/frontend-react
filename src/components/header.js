@@ -1,12 +1,17 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Header(){
     const dispatch = useDispatch();
+    const token = useSelector((state) => state.token);
     
     const logOut = () =>{
         dispatch({ type: 'REMOVE_TOKEN' });
       }
+
+    const goMyPage = () =>{
+        dispatch({ type: 'GO_MYPAGE' });
+    }
 
     return(
         <header>
@@ -16,7 +21,13 @@ function Header(){
                     <div className="service-title">살랑이</div>
                 </div>
             </div>
-            <div className="log-out" onClick={logOut}>로그아웃</div>
+            {token ? (
+                <>
+                    <div className="log-out" onClick={logOut}>로그아웃</div> 
+                    <div className="log-out" onClick={goMyPage}>마이페이지</div>
+                </>
+            ):(<></>) }
+            
         </header>
     )
 }

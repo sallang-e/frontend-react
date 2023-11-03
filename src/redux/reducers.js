@@ -13,5 +13,18 @@ const loginReducer = (state = token, action) => {
   }
 };
 
+const page = 1;
 
-export { loginReducer };
+const pageReducer = (state = page, action) => {
+  switch (action.type) {
+    case 'GO_MYPAGE':
+      return 2;
+    case 'BACK_TO_MAIN':
+      return 1;
+    default:
+      return state;
+  }
+};
+
+
+export { loginReducer, pageReducer };
